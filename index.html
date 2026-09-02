@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cloud Posture Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ================= SIDEBAR ================= -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h2>CloudPosture</h2>
+
+                <p>Security Console</p>
+
+            </div>
+
+
+            <nav class="nav-menu">
+
+                <a href="#" id="overviewNav" class="nav-item active">
+                    Overview
+                </a>
+
+
+                <a href="#" id="findingsNav" class="nav-item">
+                    Misconfigurations
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+
+        <main class="main-content">
+
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <div>
+
+                    <p class="subtitle">
+                        Cloud Security Posture
+                    </p>
+
+                    <h1 id="pageTitle">
+                        Overview
+                    </h1>
+
+                </div>
+
+
+                <div class="user-profile">
+                    AS
+                </div>
+
+            </header>
+
+
+            <!-- ================= OVERVIEW PAGE ================= -->
+
+            <section
+                id="overviewPage"
+                class="page active-page">
+
+
+                <!-- NEEDS ATTENTION -->
+
+                <div class="attention-box">
+
+                    <div>
+
+                        <p class="attention-label">
+                            NEEDS ATTENTION
+                        </p>
+
+
+                        <h2>
+                            12 Critical Findings Affect Production Resources
+                        </h2>
+
+
+                        <p>
+                            These findings are prioritized based on severity,
+                            environment, and public exposure.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="reviewBtn"
+                        class="review-btn">
+
+                        Review Findings
+
+                    </button>
+
+                </div>
+
+
+                <!-- METRICS -->
+
+                <div class="metrics-container">
+
+
+                    <div class="metric-card">
+
+                        <p>Total Findings</p>
+
+                        <h2>247</h2>
+
+                        <span>
+                            Across 4 cloud accounts
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <p>Critical</p>
+
+                        <h2 class="critical-number">
+                            12
+                        </h2>
+
+                        <span>
+                            +3 since last scan
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <p>High</p>
+
+                        <h2 class="high-number">
+                            35
+                        </h2>
+
+                        <span>
+                            9 in production
+                        </span>
+
+                    </div>
+
+
+                    <div class="metric-card">
+
+                        <p>Resolved This Week</p>
+
+                        <h2 class="resolved-number">
+                            68
+                        </h2>
+
+                        <span>
+                            18% improvement
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RISK BY ACCOUNT -->
+
+                <div class="dashboard-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <p class="section-label">
+                                RISK BY ACCOUNT
+                            </p>
+
+                            <h2>
+                                Where Should The Team Focus?
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="account-list">
+
+
+                        <div class="account-row">
+
+                            <div class="account-info">
+
+                                <h3>Production</h3>
+
+                                <p>84 findings</p>
+
+                            </div>
+
+
+                            <div class="risk-progress">
+
+                                <div class="risk-bar production-risk"></div>
+
+                            </div>
+
+
+                            <span class="risk-level high-risk">
+                                High Risk
+                            </span>
+
+                        </div>
+
+
+                        <div class="account-row">
+
+                            <div class="account-info">
+
+                                <h3>Staging</h3>
+
+                                <p>61 findings</p>
+
+                            </div>
+
+
+                            <div class="risk-progress">
+
+                                <div class="risk-bar staging-risk"></div>
+
+                            </div>
+
+
+                            <span class="risk-level medium-risk">
+                                Medium Risk
+                            </span>
+
+                        </div>
+
+
+                        <div class="account-row">
+
+                            <div class="account-info">
+
+                                <h3>Development</h3>
+
+                                <p>72 findings</p>
+
+                            </div>
+
+
+                            <div class="risk-progress">
+
+                                <div class="risk-bar development-risk"></div>
+
+                            </div>
+
+
+                            <span class="risk-level medium-risk">
+                                Medium Risk
+                            </span>
+
+                        </div>
+
+
+                        <div class="account-row">
+
+                            <div class="account-info">
+
+                                <h3>Sandbox</h3>
+
+                                <p>30 findings</p>
+
+                            </div>
+
+
+                            <div class="risk-progress">
+
+                                <div class="risk-bar sandbox-risk"></div>
+
+                            </div>
+
+
+                            <span class="risk-level low-risk">
+                                Low Risk
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ================= MISCONFIGURATIONS PAGE ================= -->
+
+            <section
+                id="findingsPage"
+                class="page">
+
+
+                <div class="findings-header">
+
+                    <div>
+
+                        <p class="section-label">
+                            SECURITY FINDINGS
+                        </p>
+
+                        <h2>
+                            Misconfigurations Explorer
+                        </h2>
+
+                        <p>
+                            <span id="findingCount">0</span>
+                            findings shown
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div class="filters-container">
+
+
+                    <div class="filter-group">
+
+                        <label>
+                            Cloud Account
+                        </label>
+
+
+                        <select id="accountFilter">
+
+                            <option value="All">
+                                All Accounts
+                            </option>
+
+                            <option value="Production">
+                                Production
+                            </option>
+
+                            <option value="Staging">
+                                Staging
+                            </option>
+
+                            <option value="Development">
+                                Development
+                            </option>
+
+                            <option value="Sandbox">
+                                Sandbox
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label>
+                            Severity
+                        </label>
+
+
+                        <select id="severityFilter">
+
+                            <option value="All">
+                                All Severities
+                            </option>
+
+                            <option value="Critical">
+                                Critical
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <label>
+                            Service
+                        </label>
+
+
+                        <select id="serviceFilter">
+
+                            <option value="All">
+                                All Services
+                            </option>
+
+                            <option value="S3">
+                                S3
+                            </option>
+
+                            <option value="EC2">
+                                EC2
+                            </option>
+
+                            <option value="RDS">
+                                RDS
+                            </option>
+
+                            <option value="IAM">
+                                IAM
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        id="clearFilters"
+                        class="clear-btn">
+
+                        Clear Filters
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- FINDINGS LIST -->
+
+                <div
+                    id="findingsList"
+                    class="findings-list">
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= FINDING DETAILS MODAL ================= -->
+
+    <div
+        id="findingModal"
+        class="finding-modal">
+
+
+        <div class="modal-content">
+
+
+            <button
+                id="closeModal"
+                class="close-modal">
+
+                ×
+
+            </button>
+
+
+            <span
+                id="modalSeverity"
+                class="severity">
+
+            </span>
+
+
+            <h2 id="modalTitle"></h2>
+
+
+            <p
+                id="modalDescription"
+                class="modal-description">
+
+            </p>
+
+
+            <!-- DETAILS -->
+
+            <div class="details-grid">
+
+
+                <div>
+
+                    <span>Account</span>
+
+                    <strong id="modalAccount"></strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>Service</span>
+
+                    <strong id="modalService"></strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>Resource</span>
+
+                    <strong id="modalResource"></strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>Risk Score</span>
+
+                    <strong id="modalRisk"></strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- IMPACT -->
+
+            <div class="modal-section">
+
+                <h3>
+                    Why does this matter?
+                </h3>
+
+                <p id="modalImpact"></p>
+
+            </div>
+
+
+            <!-- FIX -->
+
+            <div class="modal-section">
+
+                <h3>
+                    Recommended Fix
+                </h3>
+
+                <p id="modalFix"></p>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    id="assignOwnerBtn"
+                    class="secondary-btn">
+
+                    Assign Owner
+
+                </button>
+
+
+                <button
+                    id="resolveBtn"
+                    class="primary-btn">
+
+                    Mark as Resolved
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ASSIGN OWNER MODAL ================= -->
+
+    <div
+        class="owner-modal"
+        id="ownerModal">
+
+
+        <div class="owner-modal-content">
+
+
+            <div class="owner-modal-header">
+
+                <h2>
+                    Assign Owner
+                </h2>
+
+
+                <button
+                    id="closeOwnerModal"
+                    class="close-owner-modal">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <p class="owner-modal-text">
+
+                Select the team responsible for resolving this finding.
+
+            </p>
+
+
+            <select id="ownerSelect">
+
+                <option value="">
+                    Select Owner
+                </option>
+
+                <option value="Security Team">
+                    Security Team
+                </option>
+
+                <option value="Cloud Engineering">
+                    Cloud Engineering
+                </option>
+
+                <option value="DevOps Team">
+                    DevOps Team
+                </option>
+
+                <option value="Application Team">
+                    Application Team
+                </option>
+
+            </select>
+
+
+            <button
+                id="saveOwnerBtn"
+                class="primary-btn">
+
+                Assign Owner
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
